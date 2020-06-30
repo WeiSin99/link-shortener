@@ -7,7 +7,7 @@ class LinkTest < ActiveSupport::TestCase
   end
 
   test "should be valid" do 
-  	asser @link.valid?
+  	assert @link.valid?
   end
 
   test "link validation should accept valid links" do 
@@ -19,11 +19,17 @@ class LinkTest < ActiveSupport::TestCase
   end
 
   test "link validation should reject invalid link" do 
-  	invalid_links = %w[www.go htt://www.google.com https://www.google https://www.google.c]
-  	invalid_links.each do |invalid_links|
+  	invalid_links = %w[ht://ww.goo htt://www.google.com https://www.google https://www.google.c]
+  	invalid_links.each do |invalid_link|
   		@link.original_link = invalid_link
   		assert_not @link.valid?, "#{invalid_link.inspect} should be invalid"
   	end
   end
-  
+
+  test "shortened_link should be unique" do 
+  	duplicate_shortend_link = @link.dup
+  	@link.save
+  	assert_not duplicate_shortend_link.valid?
+  end
+
 end
