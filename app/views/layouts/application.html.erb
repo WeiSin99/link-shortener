@@ -10,6 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class = "containre">
+      <%= link_to "My link shortener", root_path, id: "logo" %>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
