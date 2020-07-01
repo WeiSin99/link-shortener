@@ -1,12 +1,12 @@
 <h1>Sign up</h1>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-	<%= form_with(model: @link, local: true) do |f| %> 
+    <%= form_with(model: @link, local: true) do |f| %>
 
-		<%= f.label :original_link %>
-		<%= f.text_field :original_link %> 
+		  <%= f.label :original_link %>
+		  <%= f.text_field :original_link %>
 
-		<%= f.submit "Shorten Link", class: "btn btn-primary" %> 
+		  <%= f.submit "Shorten Link", class: "btn btn-primary" %>
 		<% end %>
-	</div> 
+	</div>
 </div>
