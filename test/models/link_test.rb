@@ -29,6 +29,7 @@ class LinkTest < ActiveSupport::TestCase
   test "shortened_link should be unique" do
   	duplicate_shortend_link = @link.dup
   	@link.save
+    @link.update(original_link: "www.google.com", shortened_link: "www.youtube.com")
   	assert_not duplicate_shortend_link.valid?
   end
 
