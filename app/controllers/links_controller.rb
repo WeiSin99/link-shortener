@@ -4,6 +4,11 @@ class LinksController < ApplicationController
     @link = Link.new
   end
 
+  def show
+    @link = Link.find_by(shortened_link: params[:shortened_link])
+    redirect_to @link.original_link
+  end
+
   def create
     @link = Link.new(link_params)
     if @link.save
