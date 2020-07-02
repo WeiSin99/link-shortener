@@ -11,4 +11,6 @@ class ShortenLinkTest < ActionDispatch::IntegrationTest
     assert_template 'links/new'
   end
 
+  # test redirection
+
 end
