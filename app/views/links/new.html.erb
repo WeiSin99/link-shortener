@@ -24,8 +24,14 @@
   <ul class="list-group">
     <% @links.each do |link| %>
       <li class="list-group-item">
-        <p><%= link.original_link %></p>
-        <p><%= "#{root_url}#{link.shortened_link}" %></p>
+        <p>
+          Original link:
+          <%= link.original_link %>
+          <%= link_to "x", link, method: :delete, class: "btn btn-outline-danger delete-button" %>
+        </p>
+        <p>
+          Shortened link: <%= link_to "#{root_url}#{link.shortened_link}", shortened_link_url(link.shortened_link) %>
+        </p>
       </li>
     <% end %>
   </ul>
