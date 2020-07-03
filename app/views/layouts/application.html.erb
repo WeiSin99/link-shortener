@@ -10,11 +10,17 @@
   </head>
 
   <body>
-    <div class = "container">
-      <%= link_to "My link shortener", root_path, id: "logo" %>
-    </div>
+
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to "My link shortener", root_path, id: "logo", class: "navbar-brand" %>
+      </div>
+    </nav>
+
     <div class="container">
       <%= yield %>
     </div>
+
   </body>
+
 </html>

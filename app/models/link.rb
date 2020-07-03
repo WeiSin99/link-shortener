@@ -1,5 +1,6 @@
 class Link < ApplicationRecord
 	VALID_URL_REGEX = /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
+  default_scope -> { order(created_at: :desc) }
 	validates :original_link, presence: true, format: { with: VALID_URL_REGEX }
 	validates :shortened_link, uniqueness: true
   before_create :generate_short_url, :sanitize_url
@@ -14,7 +15,7 @@ class Link < ApplicationRecord
   def sanitize_url
     stripped_url = original_link.strip
     sanitize_link = stripped_url.downcase.gsub(/(https?:\/\/)|(www\.)/,"")
-    self.original_link = "https://#{sanitize_link}"
+    self.original_link = "https://www.#{sanitize_link}"
   end
 
 end

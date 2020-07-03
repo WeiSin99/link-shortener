@@ -8,7 +8,6 @@ class LinksController < ApplicationController
   def show
     @link = Link.find_by(shortened_link: params[:shortened_link])
     redirect_to @link.original_link
-    debugger
   end
 
   def create
