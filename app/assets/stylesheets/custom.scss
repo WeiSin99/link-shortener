@@ -1,0 +1,25 @@
+@import "bootstrap";
+
+body {
+  padding-bottom: 30px;
+}
+.jumbotron {
+  margin-top: 20px;
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.center {
+  text-align: center;
+}
+
+// form
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.btn {
+  height: 47px;
+}
