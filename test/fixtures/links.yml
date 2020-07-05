@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  original_link: MyText
-  shortened_link: MyString
+google:
+  original_link: "www.google.com"
+  shortened_link: "65jO98"
 
-two:
-  original_link: MyText
-  shortened_link: MyString
+youtube:
+  original_link: "www.youtube.com"
+  shortened_link: "jJo039"

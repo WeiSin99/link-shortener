@@ -17,3 +17,34 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+window.myFunction = function(link_id) {
+  console.log(link_id)
+  /* Get the text field */
+  var copyText = document.getElementById(link_id);
+
+  /* Select the text field */
+  copyText = copyText.innerHTML;
+
+  // Create a dummy input to copy the string array inside it
+  var dummy = document.createElement("input");
+
+  // Add it to the document
+  document.body.appendChild(dummy);
+
+  // Set its ID
+  dummy.setAttribute("id", "dummy_id");
+
+  console.log(copyText)
+  // Output the array into it
+  document.getElementById("dummy_id").value=copyText;
+  // Select it
+  dummy.select();
+
+  // Copy its contents
+  document.execCommand("copy");
+
+  alert("Copied the link: " + copyText);
+
+  document.body.removeChild(dummy);
+}

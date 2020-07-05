@@ -2,6 +2,10 @@ require 'test_helper'
 
 class ShortenLinkTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @link = links(:google)
+  end
+
   test "invalid link" do
     get root_path
     assert_no_difference 'Link.count' do
@@ -10,7 +14,5 @@ class ShortenLinkTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'links/new'
   end
-
-  # test redirection
 
 end

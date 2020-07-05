@@ -27,4 +27,24 @@ input, textarea, select, .uneditable-input {
 .delete-button {
   border-radius: 50%;
   float: right;
+  margin-top: 4px;
+}
+
+.copy-button {
+  margin-left: 20px;
+}
+
+.links {
+  width: 900px;
+  float: left;
+}
+
+.original-link {
+  font-size: 20px;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+}
+
+.shortened-link {
+  font-family: 'Muli', sans-serif;
 }

@@ -13,7 +13,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     if @link.save
-      flash[:success] = "#{root_url}#{@link.shortened_link}"
+      flash[:success] = "Short link generated"
       redirect_to root_path
     else
       flash[:danger] = "This is not a valid url"
