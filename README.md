@@ -8,8 +8,8 @@ This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating 
 
 To get started with the app, clone the repo and then install the needed gems:
 ```
-$ bundle install --without production ```
-
+$ bundle install --without production
+```
 Next, migrate the database:
 ```
 $ rails db:migrate
@@ -21,4 +21,16 @@ $ rails test
 If the test suite passes, you'll be ready to run the app in a local server:
 ```
 $ rails server
+```
+To deploy this app on Heroku, create a Heroku app
+```
+$ heroku create
+```
+Next, run the command
+```
+$ git push heroku
+```
+And last, migrate the database for production:
+```
+$ heroku run rails db:migrate
 ```
