@@ -1,6 +1,6 @@
 # Link shortener web application
 
-##Technology used
+## Technology used
 
 This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating language chosen is ERB and Bootstrap is used as the CSS framework. This appliation uses javacript copy the short url generated to the clipboard.
 
