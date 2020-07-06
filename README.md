@@ -1,24 +1,24 @@
-# README
+# Link shortener web application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Technology used
 
-Things you may want to cover:
+This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating language chosen is ERB and Bootstrap is used as the CSS framework. This appliation uses javacript copy the short url generated to the clipboard.
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get started with the app, clone the repo and then install the needed gems:
+```
+$ bundle install --without production ```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Next, migrate the database:
+```
+$ rails db:migrate
+```
+Finally, run the test suite to verify that everything is working correctly:
+```
+$ rails test
+```
+If the test suite passes, you'll be ready to run the app in a local server:
+```
+$ rails server
+```
