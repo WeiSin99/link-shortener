@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root 'links#new'
+  get '/:shortened_link', to: 'links#show', as: :shortened_link
+  resources :links, only: [:create, :destroy]
 end

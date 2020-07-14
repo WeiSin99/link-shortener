@@ -1,0 +1,50 @@
+@import "bootstrap";
+
+body {
+  padding-bottom: 30px;
+}
+.jumbotron {
+  margin-top: 20px;
+  padding-right: 150px;
+  padding-left: 150px;
+}
+
+.center {
+  text-align: center;
+}
+
+// form
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.btn-primary {
+  height: 47px;
+}
+
+.delete-button {
+  border-radius: 50%;
+  float: right;
+  margin-top: 4px;
+}
+
+.copy-button {
+  margin-left: 20px;
+}
+
+.links {
+  width: 900px;
+  float: left;
+}
+
+.original-link {
+  font-size: 20px;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+}
+
+.shortened-link {
+  font-family: 'Muli', sans-serif;
+}

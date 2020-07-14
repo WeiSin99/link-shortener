@@ -1,0 +1,38 @@
+<div class="center jumbotron">
+  <h1>Shorten your link here</h1>
+
+  <% flash.each do |message_type, message| %>
+    <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <% end %>
+
+  <%= form_with(model: @link, local: true) do |f| %>
+    <div class="form-row">
+      <div class="col-md-10">
+    		<%= f.text_field :original_link, class: "form-control form-control-lg" %>
+      </div>
+
+      <div class="col-md-2">
+        <%= f.submit "Shorten Link", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container">
+  <ul class="list-group">
+    <% @links.each do |link| %>
+      <li class="list-group-item">
+        <div class="links">
+          <p class="original-link"><%= link.original_link %></p>
+          <p>
+            <span id="link-<%= link.id %>" class="shortened-link"><%= "#{root_url}#{link.shortened_link}" %></span>
+            <button onclick="myFunction('link-<%= link.id %>')", class="btn btn-outline-info copy-button">
+              Copy
+            </button>
+          </p>
+      </div>
+          <%= link_to "x", link, method: :delete, class: "btn btn-outline-danger delete-button" %>
+      </li>
+    <% end %>
+  </ul>
+</div>
