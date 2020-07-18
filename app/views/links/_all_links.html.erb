@@ -1,0 +1,16 @@
+<ul class="list-group">
+  <% @links.reverse.each do |link| %>
+    <li class="list-group-item">
+      <div class="links">
+        <p class="original-link"><%= link.original_link %></p>
+        <p>
+          <span id="link-<%= link.id %>" class="shortened-link"><%= "#{root_url}#{link.link_identifier}" %></span>
+          <button onclick="copyLinkToClipboard('link-<%= link.id %>')", class="btn btn-outline-info copy-button">
+            Copy
+          </button>
+        </p>
+    </div>
+        <%= link_to "x", link, method: :delete, class: "btn btn-outline-danger delete-button" %>
+    </li>
+  <% end %>
+</ul>
