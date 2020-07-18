@@ -1,9 +1,7 @@
-<div class="center jumbotron">
+<div class="center jumbotron index-page-jumbotron">
   <h1>Shorten your link here</h1>
 
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
-  <% end %>
+  <%= render "layouts/flash" %>
 
   <%= form_with(model: @link, local: true) do |f| %>
     <div class="form-row">
@@ -19,20 +17,5 @@
 </div>
 
 <div class="container">
-  <ul class="list-group">
-    <% @links.each do |link| %>
-      <li class="list-group-item">
-        <div class="links">
-          <p class="original-link"><%= link.original_link %></p>
-          <p>
-            <span id="link-<%= link.id %>" class="shortened-link"><%= "#{root_url}#{link.shortened_link}" %></span>
-            <button onclick="myFunction('link-<%= link.id %>')", class="btn btn-outline-info copy-button">
-              Copy
-            </button>
-          </p>
-      </div>
-          <%= link_to "x", link, method: :delete, class: "btn btn-outline-danger delete-button" %>
-      </li>
-    <% end %>
-  </ul>
+  <%= render "links/all_links" %>
 </div>

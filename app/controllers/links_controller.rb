@@ -6,7 +6,7 @@ class LinksController < ApplicationController
   end
 
   def show
-    @link = Link.find_by(shortened_link: params[:shortened_link])
+    @link = Link.find_by(link_identifier: params[:link_identifier])
     redirect_to @link.original_link
   end
 

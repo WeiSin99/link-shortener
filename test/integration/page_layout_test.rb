@@ -14,7 +14,7 @@ class PageLayoutTest < ActionDispatch::IntegrationTest
     all_links = Link.all
     all_links.each do |link|
       assert_select 'p', text: link.original_link
-      assert_select 'span', text: root_url + link.shortened_link
+      assert_select 'span', text: root_url + link.link_identifier
     end
     assert_difference 'Link.count', -1 do
       delete link_path(@youtube_link)

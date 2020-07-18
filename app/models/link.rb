@@ -1,29 +1,21 @@
 class Link < ApplicationRecord
-	VALID_URL_REGEX = /\A(?:(?:http|https):\/\/)?([-a-zA-Z0-9.]{2,256}\.[a-z]{2,4})\b(?:\/[-a-zA-Z0-9@,!:%_\+.~#?&\/\/=]*)?\z/
-  default_scope -> { order(created_at: :desc) }
-	validates :original_link, presence: true, format: { with: VALID_URL_REGEX }
-	validates :shortened_link, uniqueness: true
+	validates :original_link, presence: true, format: { with: URI.regexp }
+	validates :link_identifier, uniqueness: true
   before_create :generate_unique_short_url, :sanitize_url
 
   def generate_unique_short_url
-    short_link = generate_short_url
-    while !Link.find_by(shortened_link: short_link).nil? do
-      short_link = generate_short_url
+    link_identifier = generate_link_identifier
+    while Link.find_by(link_identifier: link_identifier).present? do
+      link_identifier = generate_link_identifier
     end
-    self.shortened_link = short_link
+    self.link_identifier = link_identifier
   end
 
-  def generate_short_url
-    chars_letter = ['A'..'Z','a'..'z'].map {|range| range.to_a}.flatten
-    chars = ['0'..'9','A'..'Z','a'..'z'].map{|range| range.to_a}.flatten
-    first_two_short_link = chars_letter.sample
-    second_letter = chars_letter.sample
-    while first_two_short_link == second_letter do
-      second_letter = chars_letter.sample
-    end
-    first_two_short_link = first_two_short_link + second_letter
-    latter_four_short_link = 4.times.map{chars.sample}.join
-    short_link = first_two_short_link + latter_four_short_link
+  def generate_link_identifier
+    chars = ['A'..'Z','a'..'z'].map {|range| range.to_a}.flatten
+		first_two_chars = 2.times.map{chars.sample}.join
+		latter_four_chars = SecureRandom.alphanumeric(4)
+		first_two_chars + latter_four_chars
   end
 
   def sanitize_url
