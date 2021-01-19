@@ -1,6 +1,5 @@
 class Link < ApplicationRecord
   validates :original_link, presence: true, format: { with: URI.regexp }
-  validates :identifier, uniqueness: true
   before_create :sanitize_url
   after_create :generate_identifier
 
