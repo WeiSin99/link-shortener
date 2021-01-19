@@ -1,0 +1,12 @@
+<li class="list-group-item">
+  <div class="links">
+    <p class="original-link"><%= link.original_link %></p>
+    <p>
+      <span id="<%= get_link_id(link) %>" class="shortened-link"><%= get_shortened_link(link) %></span>
+      <button onclick="copyLinkToClipboard('<%= get_link_id(link) %>')", class="btn btn-outline-info copy-button">
+        Copy
+      </button>
+    </p>
+</div>
+    <%= link_to "x", link, method: :delete, class: "btn btn-outline-danger delete-button" %>
+</li>

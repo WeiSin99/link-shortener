@@ -3,7 +3,7 @@ require 'test_helper'
 class LinkTest < ActiveSupport::TestCase
 
   def setup
-  	@link = Link.new(original_link: "https://www.google.com", link_identifier: "www.youtube.com")
+  	@link = Link.new(original_link: "https://www.google.com", identifier: "sd89uY")
   end
 
   test "should be valid" do
@@ -29,7 +29,7 @@ class LinkTest < ActiveSupport::TestCase
   test "link identifier should be unique" do
   	duplicate_shortend_link = @link.dup
   	@link.save
-    @link.update(original_link: "https://www.youtube.com", link_identifier: "www.youtube.com")
+    @link.update(original_link: "https://www.youtube.com", identifier: "sd89uY")
   	assert_not duplicate_shortend_link.valid?
   end
 

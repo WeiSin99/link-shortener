@@ -11,12 +11,12 @@ describe LinksController, type: :controller do
 
   context "GET show" do
     before(:all) do
-      @link = Link.new(original_link: "https://www.google.com", link_identifier: "df34BD")
+      @link = Link.new(original_link: "https://www.google.com", identifier: "df34BD")
       @link.save
     end
 
     it "should redirect to correct url" do
-      get :show, params: { link_identifier: @link.link_identifier }
+      get :show, params: { identifier: @link.identifier }
       expect(response).to redirect_to("https://www.google.com")
     end
   end
@@ -44,7 +44,7 @@ describe LinksController, type: :controller do
 
   context "destroy" do
     before(:all) do
-      @link = Link.new(original_link: "https://www.google.com", link_identifier: "df34BD")
+      @link = Link.new(original_link: "https://www.google.com", identifier: "df34BD")
       @link.save
     end
 

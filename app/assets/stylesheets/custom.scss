@@ -4,12 +4,6 @@ body {
   padding-bottom: 30px;
 }
 
-.index-page-jumbotron {
-  margin-top: 20px;
-  padding-right: 150px;
-  padding-left: 150px;
-}
-
 .center {
   text-align: center;
 }
@@ -48,4 +42,10 @@ input, textarea, select, .uneditable-input {
 
 .shortened-link {
   font-family: 'Muli', sans-serif;
+}
+
+#clipboard {
+  position: absolute;
+  right: 150%;
+  overflow: hidden;
 }
