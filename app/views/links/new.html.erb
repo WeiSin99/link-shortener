@@ -1,10 +1,10 @@
-<div class="center jumbotron index-page-jumbotron">
+<div class="center jumbotron mt-5 px-5">
   <h1>Shorten your link here</h1>
 
   <%= render "layouts/flash" %>
 
   <%= form_with(model: @link, local: true) do |f| %>
-    <div class="form-row">
+    <div class="form-row px-5">
       <div class="col-md-10">
     		<%= f.text_field :original_link, class: "form-control form-control-lg" %>
       </div>
@@ -17,5 +17,9 @@
 </div>
 
 <div class="container">
-  <%= render "links/all_links" %>
+  <ul class="list-group">
+    <%= render partial: "link", collection: @links.reverse %>
+  </ul>
 </div>
+
+<input id="clipboard"></input>

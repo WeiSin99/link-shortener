@@ -4,7 +4,7 @@ require "spec_helper"
 describe Link do
   context "validation" do
     before(:all) do
-      @link = Link.new(original_link: "https://www.google.com", link_identifier: "www.youtube.com")
+      @link = Link.new(original_link: "https://www.google.com", identifier: "sd89uY")
     end
 
     it "should accept valid links" do
@@ -26,7 +26,7 @@ describe Link do
     it "should be unique" do
       duplicate_shortend_link = @link.dup
       @link.save
-      @link.update(original_link: "https://www.youtube.com", link_identifier: "www.youtube.com")
+      @link.update(original_link: "https://www.youtube.com", identifier: "sd89uY")
       expect(duplicate_shortend_link.valid?).to be false
     end
 

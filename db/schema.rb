@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_031952) do
+ActiveRecord::Schema.define(version: 2020_07_20_093815) do
 
   create_table "links", force: :cascade do |t|
     t.text "original_link"
-    t.string "link_identifier"
+    t.string "identifier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
