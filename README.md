@@ -1,8 +1,10 @@
 # Link shortener web application
 
+This web application is available on [www.weisinloo.com](www.weisinloo.com)
+
 ## Technology used
 
-This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating language chosen is ERB and Bootstrap is used as the CSS framework. This appliation uses javacript copy the short url generated to the clipboard.
+This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating language chosen is ERB and Bootstrap is used as the CSS framework. This appliation uses javacript to copy the short url generated to the clipboard.
 
 ## Getting started
 
