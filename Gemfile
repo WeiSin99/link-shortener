@@ -11,9 +11,9 @@ gem 'turbolinks',     '5.2.1'
 gem 'jbuilder',       '2.10.0'
 gem 'bootsnap',       '1.4.6', require: false
 gem 'hashids'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3', '1.4.2'
   gem 'byebug',  '11.1.3', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -30,8 +30,4 @@ group :test do
   gem 'webdrivers',               '4.3.0'
   gem 'rails-controller-testing', '1.0.4'
   gem "rspec-rails"             , '4.0.1'
-end
-
-group :production do
-  gem 'pg', '1.2.3'
 end
