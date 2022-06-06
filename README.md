@@ -1,38 +1,53 @@
-# Link shortener web application
+# Link shortener
 
-This web application is available on [www.weisinloo.com](www.weisinloo.com)
+![Project Screenshot](./app/assets/images/project-screenshot.png)
+A web application that can be used to shorten long url.
+It is available on [weisinloo.com](http://www.weisinloo.com/)
 
-## Technology used
+## Tech Stack
 
-This app is built with Rails 6.0.3.2. The databse is Postgresql. The templating language chosen is ERB and Bootstrap is used as the CSS framework. This appliation uses javacript to copy the short url generated to the clipboard.
+- Backend: Ruby on Rails
+- Database: PostgreSQL
+- Frontend: HTML, CSS, JavaScript
+- Testing: rspec
 
-## Getting started
+## System Dependencies
 
-To get started with the app, clone the repo and then install the needed gems:
+- Git
+- Ruby
+- NodeJS
+- Yarn
+- PostgreSQL
+
+## Project Setup
+
+### Setup
+
+```sh
+# install gems
+bundle install
+
+# install javascript dependencies
+yarn install
+
+# create your local database
+rails db:create
+
+# run database migration
+rails db:migrate
 ```
-$ bundle install --without production
+
+### Run development
+
+```sh
+# Run a development server on http://localhost:3000/
+rails server
 ```
-Next, migrate the database:
+
+### Run tests
+
+```sh
+# Run ruby test suite
+bundle exec rspec
 ```
-$ rails db:migrate
-```
-Finally, run the test suite to verify that everything is working correctly:
-```
-$ rails test
-```
-If the test suite passes, you'll be ready to run the app in a local server:
-```
-$ rails server
-```
-To deploy this app on Heroku, create a Heroku app
-```
-$ heroku create
-```
-Next, run the command
-```
-$ git push heroku
-```
-And last, migrate the database for production:
-```
-$ heroku run rails db:migrate
-```
+
