@@ -2,7 +2,6 @@
 
 ![Project Screenshot](./app/assets/images/project-screenshot.png)
 A web application that can be used to shorten long url.
-It is available on [weisinloo.com](http://www.weisinloo.com/)
 
 ## Tech Stack
 
